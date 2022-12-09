@@ -105,7 +105,6 @@
 <script setup>
 	import { ref } from 'vue'
 	import { RouterLink, RouterView } from 'vue-router'
-	import MainHeader from './components/MainHeader.vue'
 
 	const menuData = ref({
 		'Můj účet': [
