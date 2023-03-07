@@ -105,6 +105,7 @@
 <script setup>
 	import { ref } from 'vue'
 	import { RouterLink, RouterView } from 'vue-router'
+	import { useApiStore } from '@/stores/api'
 
 	const menuData = ref({
 		'Můj účet': [
@@ -170,6 +171,12 @@
 	const toggleMenu = (e) => {
 		e.target.parentElement.classList.toggle('expanded')
 	}
+
+	;(async () => {
+		const apiStore = useApiStore()
+		const headerFooterData = await apiStore.fetchData('/html/elements')
+		console.log(headerFooterData)
+	})()
 </script>
 
 <style lang="scss">
